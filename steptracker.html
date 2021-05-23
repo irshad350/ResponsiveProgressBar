@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-<script src="steps_list.js"></script>
-<script src="current_step.js"></script>
+<script src="stations_list.js"></script>
+<script src="current_station.js"></script>
 </head>
 <body>
     <script>
@@ -140,8 +140,7 @@
                 leftPath.setAttribute("fill", "none");
                 svg.appendChild(leftPath);
             }
-            
-            if(Math.ceil(activeStations.length/6) == 4) {
+            if(Math.ceil(activeStations.length/6) >= 4) {
                 var rightPath1 = document.createElementNS(svgNS,'path');
                 rightPath1.setAttributeNS(null, "d", "M 1003,350 a50,50 0 1,1 0,140");
                 rightPath1.setAttribute("stroke", pathColor);
