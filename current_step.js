@@ -1,1 +1,1 @@
-var currentStation = "STATION _ 10";
+var currentStep = "STEP _ 8";
