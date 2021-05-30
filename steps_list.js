@@ -1,4 +1,4 @@
-var totalStations = [
+var totalSteps = [
     "STEP _ 1",
     "STEP _ 2",
     "STEP _ 3",
