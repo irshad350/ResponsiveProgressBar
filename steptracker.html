@@ -2,12 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="input/telugu/steps_list.js"></script>
-    <script type="text/javascript" src="input/telugu/current_step.js"></script>
-    <script type="text/javascript" src="resources/multi_step_responsive_progressbar.js"></script>
+    <script type="text/javascript" src="input/languages.js"></script>    
 </head>
 <body style="background-color: #ebebe0;"></body>
-    <script>
+
+<script type="text/javascript">
+    var languageRefreshTimeOut = 15000; // 15 secs
+    var pageRefreshTimeOut = languages.length * languageRefreshTimeOut;
+
+    function initPage() {
         var config = {
             "total_steps": totalSteps,
             "current_step": currentStep,
@@ -19,7 +22,56 @@
             "passed_step_color": "#218709",
             "text-color":"#050C64"
         };
-        console.log(currentStep);
-        init(config);
-    </script>
+        init(config); 
+    }
+
+    function loadJS(language) {
+            document.body.innerHTML = '';
+            var jsElm1 = document.createElement("script");
+            jsElm1.type = "text/javascript";
+            jsElm1.src = "input/" + language + "/steps_list.js";
+            document.body.appendChild(jsElm1);
+
+            var jsElm2 = document.createElement("script");
+            jsElm2.type = "text/javascript";
+            jsElm2.src = "input/" + language + "/current_step.js";
+            document.body.appendChild(jsElm2);
+
+            var jsElm3 = document.createElement("script");
+            jsElm3.type = "text/javascript";
+            jsElm3.src = "resources/multi_step_responsive_progressbar.js";
+            document.body.appendChild(jsElm3);
+
+            setTimeout(function() {
+                initPage();
+            }, (50));// timeout added to load script files
+
+    }
+
+    var i = 1;
+    function loadBody() {
+        var timeOut = languageRefreshTimeOut;
+        if (i === 1) {
+            timeOut = 0;
+        }
+        setTimeout(function() {
+            loadJS(languages[i-1]);  
+            i++;
+            if (i <= languages.length) {
+                loadBody();
+            }
+              
+        }, timeOut);// change language every 10 secs
+    }
+
+    
+    loadBody();
+
+    
+
+    setTimeout(function(){
+        window.location.reload(1);
+    }, pageRefreshTimeOut);// refresh page every 1 mint
+    
+</script>
 </html>
