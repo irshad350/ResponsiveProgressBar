@@ -1,0 +1,1 @@
+var currentStep = 'జైట్సర్';

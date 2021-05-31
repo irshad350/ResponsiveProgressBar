@@ -6,6 +6,7 @@ var currentStep;
 var defaultCircleColor;
 var passedCircleColor;
 var lastPassedCircleColor;
+var textColor;
 var svg;
 var svgNS;
     
@@ -23,6 +24,7 @@ function init(config) {
     defaultCircleColor = config['default_step_color'];
     passedCircleColor = config['passed_step_color'];
     lastPassedCircleColor = config['last_step_color'];
+    textColor = config['text-color'];
     
     prepareStationList();
     createPaths(pathColor, pathWidth);
@@ -103,7 +105,7 @@ function createCircle() {
         newCircle.setAttribute("cx", cx);
         newCircle.setAttribute("cy", cy);
         newCircle.setAttribute("r", "7");
-        if (currentStep === activeSteps[i] && getCurrentStepIndex() !== 0) {
+        if (currentStep == activeSteps[i] && getCurrentStepIndex() !== 0) {
             newCircle.setAttribute("fill", lastPassedCircleColor);
             newCircle.setAttribute("stroke-width", "2");
             newCircle.setAttribute("stroke", "black");
@@ -218,7 +220,8 @@ function setText() {
         foreignObject.setAttribute("y", yAxis);
         foreignObject.setAttribute("width", 190);
         foreignObject.setAttribute("height", 50);
-        foreignObject.innerHTML = "<div xmlns='http://www.w3.org/1999/xhtml' style='height: 3em;display: flex;align-items: center'>" + activeSteps[i] + "</div>";
+        foreignObject.innerHTML = 
+        "<div xmlns='http://www.w3.org/1999/xhtml' style='height: 3em;display: flex;align-items: center;font-weight: bold;color:" + textColor + "'>" + activeSteps[i] + "</div>";
         svg.appendChild(foreignObject);
         if (isRowEven) {
             xAxis = xAxis - 166;
