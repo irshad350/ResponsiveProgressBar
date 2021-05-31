@@ -1,4 +1,4 @@
-[
+var totalSteps = [
     "STEP _ 1",
     "STEP _ 2",
     "STEP _ 3",
@@ -36,4 +36,4 @@
     "STEP _ 35",
     "STEP _ 36",
     "STEP _ 37"
-]
+];
