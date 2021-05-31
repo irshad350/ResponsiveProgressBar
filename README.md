@@ -1,10 +1,10 @@
 # Multi step Responsive Progress Bar
 
 #### If we have only 24 steps
-![image](https://user-images.githubusercontent.com/22837040/117969489-187ea380-b345-11eb-8e75-f0f953b05fe3.png)
+![image](https://user-images.githubusercontent.com/22837040/120138641-84da1d80-c1f4-11eb-9448-214fb2cea2f6.png)
 
 #### If we have more than 24 steps
-![image](https://user-images.githubusercontent.com/22837040/119252026-67d79600-bbc7-11eb-88a7-96044fc9a837.png)
+![image](https://user-images.githubusercontent.com/22837040/120138604-683de580-c1f4-11eb-9723-38341ea08d1f.png)
 
 
 ### Description :-
