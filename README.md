@@ -29,7 +29,8 @@
               "line_color": "#000000",
               "default_step_color":"#8585ad",
               "last_step_color": "#e6e600",
-              "passed_step_color": "#218709"
+              "passed_step_color": "#218709",
+              "text-color":"#050C64"
           };
 
           init(config);
@@ -94,6 +95,7 @@
 6. default_step_color - this is used to set default circle color
 7. last_step_color - this is used to set last active circle color
 8. passed_step_color - this is used to set all active circle color's(except the recent circle)
+9. text-color - display text color
 
 #### Example :- 
   If we have 34 steps and current step is at 19 then we will display the progress bar from 10-33 steps. so that we can track previous steps as well as next steps.
